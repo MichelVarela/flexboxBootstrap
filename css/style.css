@@ -1,0 +1,258 @@
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../images/bg-body.png');
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container .main-header {
+    display: flex;/* declaramos la prop. flex */
+    flex-wrap: wrap;/* indicamos que el padre respete el tamaño de sus hijos */
+    flex-direction: column;/* la posicion va a ser de arriba hacia abajo */
+    height: 500px;/* si no se le aplica un alto al padre no funciona el justify-content */
+    justify-content: space-around;
+}
+
+.container .main-header .logo {
+    border-radius: 50%;
+    border: 2px solid #bdb9b9;
+}
+
+.container .main-header .toggle-nav {/* BOTON-NAV */
+    color: white;
+    background-color: #242222;
+}
+
+.container .main-header .toggle-nav .fa {
+    width: 35px;
+    height: 30px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* LISTA-NAVEGACION */
+
+.container .main-header .main-nav {
+    width: 100%;
+}
+
+.container .main-header .main-nav ul {
+    padding-inline-start: 0;
+}
+
+.container .main-header .main-nav ul li {
+    list-style: none;
+    text-align: center;
+    border: 1px solid #bdb9b9;
+    background-color: #242222;
+}
+
+.container .main-header .main-nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 35px;/* para centrarlo en el 'eje Y' darle el mismo alto */
+    display: block;/* para que el 'a' tome todo el ancho */
+    width: 100%;
+    height: 35px;
+    color: white;
+}
+
+/* BANNER */
+
+.container .banner {
+    display: none;
+}
+
+/* PRODUCTOS */
+
+.container .vip-products {/* no aplico props por usar bootstrap */
+    /* display: flex;
+    flex-wrap: wrap;
+    height: 2700px;
+    margin-bottom: 10px; */
+    /* justify-content: space-around; */
+}
+
+.container .vip-products .product {
+    margin-bottom: 30px;
+}
+
+.container .vip-products .product h2, p {
+    padding-top: 10px ;/* separacion entre etiquetas h2 y p */
+}
+
+.container .vip-products .product .photo-container .photo {/* ancho de la imagen */
+    width: 100%;
+}
+
+/* etiquetas con position:absolute */
+
+.container .vip-products .product .photo-container {
+    position: relative;
+}
+
+.container .vip-products .product .photo-container .special {
+    position: absolute;
+    top: 0;
+    left: 80%;
+    width: 60px;
+}
+
+.container .vip-products .product .photo-container .zoom {
+    text-decoration: none;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+
+.container .vip-products .product .more {/* botonera más */
+    display: inline-block;
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #242222;
+}
+
+/* FOOTER */
+
+.container .main-footer {
+    display: flex;/* declaramos la prop. flex */
+    flex-wrap: wrap;/* indicamos que el padre respete el tamaño de sus hijos */
+    flex-direction: column;/* la posicion va a ser de arriba hacia abajo */
+    height: 250px;/* si no se le aplica un alto al padre no funciona el justify-content */
+    justify-content: space-around;
+}
+
+.container .main-footer ul {
+    width: 100%;
+    padding-inline-start: 0;
+}
+
+.container .main-footer ul li {
+    list-style: none;
+    text-align: center;
+    background-color: #cf0c0c;
+    border: 1px solid #bdb9b9;
+}
+
+.container .main-footer ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    display: block;/* para que el 'a' tome todo el ancho */
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+}
+
+@media(min-width: 768px){/* tablets */
+
+    .container {
+        max-width: 720px;
+    }
+
+    .container .main-header {
+        height: 280px;/* si no se le aplica un alto al padre no funciona el justify-content */
+    }
+
+    .container .main-header .toggle-nav {/* BOTON-NAV */
+        display: none;
+    }
+
+    /* LISTA-NAVEGACION */
+    .container .main-header .main-nav ul {
+        padding-inline-start: 0;
+        /* display: flex;
+        justify-content: space-between; */
+    }
+    
+    .container .main-header .main-nav ul li {
+        display: inline-block;
+    }
+    
+    .container .main-header .main-nav ul li a {
+        width: 110px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    /* BANNER */
+    .container .banner {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .container .banner img {
+        width: 100%;
+    }
+}
+
+@media(min-width: 992px){/* desktops */
+    .container {
+        max-width: 960px;
+    }
+
+    /* LISTA-NAVEGACION */
+    .container .main-header .main-nav ul li a {
+        width: 150px;
+    }
+
+    /* FOOTER */
+    .container .main-footer {
+        height: 200px;/* si no se le aplica un alto al padre no funciona el justify-content */
+        background-color: #cf0c0c;
+        align-items: center;
+        border-radius: 30px 30px 0 0;
+    }
+    
+    .container .main-footer ul {
+        width: auto;/* ancho determinado por su contenido */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .container .main-footer ul li {
+        border: none;
+        border-right: 1px solid white;
+        display: inline-block;
+    }
+
+    .container .main-footer ul li:last-child {
+        border-right: none;
+    }
+    
+    .container .main-footer ul li a {
+        text-transform: capitalize;
+        width: 100px;
+        height: auto;
+        line-height: auto;
+        font-weight: bold;
+    }
+}
+
+@media(min-width: 1200px){
+    .container {
+        max-width: 1140px;
+    }
+
+    /* LISTA-NAVEGACION */
+    .container .main-header .main-nav ul li a {
+        width: 180px;
+    }
+}
